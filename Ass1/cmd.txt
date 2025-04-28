@@ -1,0 +1,14 @@
+sudo apt install openjdk-8-jdk
+sudo update-alternatives --config javac
+
+cat /etc/resolv.conf | grep nameserver
+
+T1
+javac *.java
+rmiregistry
+
+T2
+java ArithmeticServer
+
+T3
+java ArithmeticClient

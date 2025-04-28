@@ -1,0 +1,7 @@
+sudo apt update
+sudo apt install openmpi-bin openmpi-common libopenmpi-dev
+
+mpicc sum_mpi.c -o sum_mpi\
+
+mpirun -np 4 ./sum_mpi
+mpirun --allow-run-as-root --oversubscribe -np 4 ./sum_mpi

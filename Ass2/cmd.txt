@@ -1,0 +1,13 @@
+sudo apt install openjdk-8-jdk
+sudo update-alternatives --config java
+sudo update-alternatives --config javac
+
+T1
+idlj -fall Calculator.idl
+javac CalculatorServer.java CalculatorClient.java CalculatorApp/*.java
+tnameserv -ORBInitialPort 1050 &amp;
+java CalculatorServer -ORBInitialPort 1050
+-->✅ Calculator Server is running...
+
+T2
+java CalculatorClient -ORBInitialPort 1050

@@ -1,0 +1,20 @@
+sudo apt update
+sudo apt install python3.6
+or
+ls /usr/bin/python*
+sudo update-alternatives --install /usr/bin/python3 python3 /usr/bin/python3.10 1
+sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.10 1
+sudo update-alternatives --config python3
+
+python --version
+
+T1
+python coordinator.py
+
+T2
+python client.py
+
+offsets_input = input("Enter initial clock offset(s) in seconds (e.g. 3.2, -1.0, 2.5): ")
+offsets = [float(offset.strip()) for offset in offsets_input.split(",")]
+for offset in offsets:
+    threading.Thread(target=client_node, args=(offset,)).start()
