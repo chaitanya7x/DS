@@ -4,6 +4,7 @@ sudo update-alternatives --config javac
 
 T1
 idlj -fall Calculator.idl
+javac *.java
 javac CalculatorServer.java CalculatorClient.java CalculatorApp/*.java
 tnameserv -ORBInitialPort 1050 &amp;
 java CalculatorServer -ORBInitialPort 1050
